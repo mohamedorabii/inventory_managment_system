@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Inventory_M_System') }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +119,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-3 fw-bold" href="{{ url('/') }}">
                     <span class="brand-badge text-white">I</span>
-                    <span>{{ config('app.name', 'Laravel') }}</span>
+                    <span>{{ config('app.name', 'Inventory_M_System') }}</span>
                 </a>
 
                 <div class="ms-auto d-flex align-items-center gap-2">
@@ -215,7 +215,7 @@
                                 <div class="glass-card rounded-4 p-3 h-100">
                                     <div class="feature-icon mb-3 fw-bold">S</div>
                                     <div class="fw-semibold mb-1">Secure</div>
-                                    <div class="small text-muted-soft">Built on Laravel auth and sessions.</div>
+                                    <div class="small text-muted-soft">Built on Inventory_M_System auth and sessions.</div>
                                 </div>
                             </div>
                         </div>

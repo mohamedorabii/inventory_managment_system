@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Inventory_M_System') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Inventory_M_System') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,31 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="inventoryDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ __('Inventory') }}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="inventoryDropdown">
+                                    <a class="dropdown-item" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
+                                    <a class="dropdown-item" href="{{ route('suppliers.index') }}">{{ __('Suppliers') }}</a>
+                                    <a class="dropdown-item" href="{{ route('products.index') }}">{{ __('Products') }}</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="ordersDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ __('Orders & Purchases') }}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="ordersDropdown">
+                                    <a class="dropdown-item" href="{{ route('customers.index') }}">{{ __('Customers') }}</a>
+                                    <a class="dropdown-item" href="{{ route('orders.index') }}">{{ __('Orders') }}</a>
+                                    <a class="dropdown-item" href="{{ route('purchases.index') }}">{{ __('Purchases') }}</a>
+                                </div>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
