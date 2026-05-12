@@ -22,6 +22,10 @@ class User extends Authenticatable implements FilamentUser
      *
      * @var list<string>
      */
+    protected $attributes = [
+        'role' => 'Admin',
+    ];
+
     protected $fillable = [
         'name',
         'email',
