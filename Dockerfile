@@ -14,14 +14,15 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 COPY . .
-RUN mkdir -p public/build
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-RUN npm install && npm run build && ls -la public/build/
+RUN npm install && npm run build
+
+RUN ls -la public/build/
 
 RUN chmod -R 777 storage bootstrap/cache
 
 EXPOSE 8080
 
-CMD sh -c "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"]
