@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Suppliers;
 use App\Filament\Resources\Suppliers\Pages\ManageSuppliers;
 use App\Models\Supplier;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -20,7 +21,11 @@ class SupplierResource extends Resource
 {
     protected static ?string $model = Supplier::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingStorefront;
+
+    protected static ?string $navigationLabel = 'Suppliers';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Partners';
 
     protected static ?string $recordTitleAttribute = 'name';
 

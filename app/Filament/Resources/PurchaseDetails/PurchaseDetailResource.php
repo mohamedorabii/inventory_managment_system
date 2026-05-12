@@ -5,6 +5,7 @@ namespace App\Filament\Resources\PurchaseDetails;
 use App\Filament\Resources\PurchaseDetails\Pages\ManagePurchaseDetails;
 use App\Models\PurchaseDetail;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -21,7 +22,11 @@ class PurchaseDetailResource extends Resource
 {
     protected static ?string $model = PurchaseDetail::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedListBullet;
+
+    protected static ?string $navigationLabel = 'Purchase Details';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Purchases';
 
     protected static ?string $recordTitleAttribute = 'purchase_details_id';
 

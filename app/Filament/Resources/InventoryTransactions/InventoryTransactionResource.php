@@ -5,6 +5,7 @@ namespace App\Filament\Resources\InventoryTransactions;
 use App\Filament\Resources\InventoryTransactions\Pages\ManageInventoryTransactions;
 use App\Models\InventoryTransaction;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -22,7 +23,11 @@ class InventoryTransactionResource extends Resource
 {
     protected static ?string $model = InventoryTransaction::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedArrowPath;
+
+    protected static ?string $navigationLabel = 'Inventory Transactions';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Inventory';
 
     protected static ?string $recordTitleAttribute = 'transaction_id';
 

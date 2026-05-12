@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Customers;
 use App\Filament\Resources\Customers\Pages\ManageCustomers;
 use App\Models\Customer;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -20,7 +21,11 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
+
+    protected static ?string $navigationLabel = 'Customers';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Partners';
 
     protected static ?string $recordTitleAttribute = 'name';
 

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\OrderDetails;
 use App\Filament\Resources\OrderDetails\Pages\ManageOrderDetails;
 use App\Models\OrderDetail;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -21,7 +22,11 @@ class OrderDetailResource extends Resource
 {
     protected static ?string $model = OrderDetail::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedListBullet;
+
+    protected static ?string $navigationLabel = 'Order Details';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Orders';
 
     protected static ?string $recordTitleAttribute = 'order_details_id';
 

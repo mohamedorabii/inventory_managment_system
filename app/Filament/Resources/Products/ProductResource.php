@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Products;
 use App\Filament\Resources\Products\Pages\ManageProducts;
 use App\Models\Product;
 use BackedEnum;
+use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -21,7 +22,11 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCube;
+
+    protected static ?string $navigationLabel = 'Products';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Inventory';
 
     protected static ?string $recordTitleAttribute = 'name';
 
